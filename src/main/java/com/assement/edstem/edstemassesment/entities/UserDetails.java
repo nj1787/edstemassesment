@@ -10,9 +10,9 @@ public class UserDetails {
     @Id
     private BigInteger user_contact_number;
     private String user_name;
-    private String address;
-    private String email;
-
+    private String user_address;
+    private String user_email;
+    
     public BigInteger getUser_contact_number() {
         return user_contact_number;
     }
@@ -25,16 +25,17 @@ public class UserDetails {
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
-    public String getAddress() {
-        return address;
+    public String getUser_address() {
+        return user_address;
     }
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUser_address(String user_address) {
+        this.user_address = user_address;
     }
-    public String getEmail() {
-        return email;
+    public String getUser_email() {
+        return user_email;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
     }
+
 }
