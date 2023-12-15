@@ -1,6 +1,5 @@
 package com.assement.edstem.edstemassesment.controllers;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import com.assement.edstem.edstemassesment.repository.UserRepository;
 class UserController{
 
     @Autowired
-    UserRepository repos;
+    UserRepository repos; // Dependency Injection Comes Into Picture Here
 
     @GetMapping("/CMS/rest/api/contacts/all")
     public List<UserDetails> displayAllContacts(){
@@ -26,7 +25,7 @@ class UserController{
     }
 
     @GetMapping("/CMS/rest/api/contacts/{contactnum}")
-    public UserDetails displaySingleContact(@PathVariable("contactnum") BigInteger number){
+    public UserDetails displaySingleContact(@PathVariable("contactnum") String number){
         return repos.findById(number).get();
     }
 
@@ -39,7 +38,7 @@ class UserController{
     }
 
     @DeleteMapping("/CMS/rest/api/contacts/delete/{contactnumber}")
-    public String deleteSingleContact(@PathVariable BigInteger number){
+    public String deleteSingleContact(@PathVariable String number){
         repos.deleteById(number);
         return "Contact Deleted Successfully";
     }
